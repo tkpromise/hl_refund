@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</p>
+{#
+{% if filename %}
+	<div>
+		<img src="{{ url_for('display_image', filename=filename) }}">
+	</div>
+{% endif %}
+#}
+<form method="post" action="/" enctype="multipart/form-data">
+
+
+<div role="container" id="id14" class="weda-ui" title=""><div role="container" id="id1" class="weda-ui lcap-row wa-comp-CLOUDBASE_STANDARD-Row lcap-flex-wrap-nowrap lcap-align-items-stretch lcap-justify-content-flex-start" title="" style="margin: -0.3571rem;"><img class="weda-ui weda-image" alt="[图片]" src="https://main.qcloudimg.com/raw/d498faff179fc5253f1d922670865a7c.png" style="object-fit: fill; width: 100%; height: 145px;"></div><div role="container" id="id68" class="weda-ui students-title-wrap students-title-wrap" title=""><p class="weda-text weda-ui students-title students-title" id="id70" style="-webkit-line-clamp: 2; white-space: pre-line;">会员储值退还信息登记</p></div><div role="container" id="id71" class="weda-ui" title="" style="width: 23.9286rem; margin-top: 0.5714rem; margin-left: 1.4286rem;"><p class="weda-text weda-ui" id="id72" style="-webkit-line-clamp: 2; white-space: pre-line; color: rgb(68, 68, 68); font-size: 1rem; line-height: 1.4286rem;">感谢您能抽出几分钟时间填写以下内容，现在我们马上开始吧！</p></div><div class="wedatea2td-form weda-ui weda-form students-form-container students-form-container students-form-container students-form-container wa-comp-CLOUDBASE_STANDARD-Form" id="id8"><div role="container" id="id9" class="weda-ui wa-comp-CLOUDBASE_STANDARD-FormInput wa-comp-CLOUDBASE_STANDARD-FormInput gsd-h5-react-formitem wa-comp-CLOUDBASE_STANDARD-FormItem gsd-h5-react-formitem wa-comp-CLOUDBASE_STANDARD-FormItem" title=""><div class="wedatea2td-form__item weda-ui weui-cells_forms weda-formcells__pc vertical weda-ui weda-input"><div class="wedatea2td-form__label"><label>姓名</label></div><div class="wedatea2td-form__controls"><input type="text" placeholder="请填写您的姓名" class="wedatea2td-input size-l" name="name" value=""></div></div></div><div role="container" id="id9" class="weda-ui wa-comp-CLOUDBASE_STANDARD-FormPhone wa-comp-CLOUDBASE_STANDARD-FormPhone gsd-h5-react-formitem wa-comp-CLOUDBASE_STANDARD-FormItem gsd-h5-react-formitem wa-comp-CLOUDBASE_STANDARD-FormItem" title=""><div class="wedatea2td-form__item weda-ui weui-cells_forms weda-formcells__pc vertical weda-ui weda-input"><div class="wedatea2td-form__label"><label>手机</label></div><div class="wedatea2td-form__controls"><input type="number" placeholder="请填写您的手机号码" class="wedatea2td-input size-l" name="phone" value=""></div></div></div><div role="container" id="id9" class="weda-ui wa-comp-CLOUDBASE_STANDARD-FormInput wa-comp-CLOUDBASE_STANDARD-FormInput gsd-h5-react-formitem wa-comp-CLOUDBASE_STANDARD-FormItem gsd-h5-react-formitem wa-comp-CLOUDBASE_STANDARD-FormItem" title=""><div class="wedatea2td-form__item weda-ui weui-cells_forms weda-formcells__pc vertical weda-ui weda-input"><div class="wedatea2td-form__label"><label>开户银行</label></div><div class="wedatea2td-form__controls"><input type="text" placeholder="请填写您的开户银行" class="wedatea2td-input size-l" name="bankName" value=""></div></div></div><div role="container" id="id9" class="weda-ui wa-comp-CLOUDBASE_STANDARD-FormInput wa-comp-CLOUDBASE_STANDARD-FormInput gsd-h5-react-formitem wa-comp-CLOUDBASE_STANDARD-FormItem gsd-h5-react-formitem wa-comp-CLOUDBASE_STANDARD-FormItem" title=""><div class="wedatea2td-form__item weda-ui weui-cells_forms weda-formcells__pc vertical weda-ui weda-input"><div class="wedatea2td-form__label"><label>开户网点</label></div><div class="wedatea2td-form__controls"><input type="text" placeholder="请填写银行开户网点" class="wedatea2td-input size-l" name="bankAddress" value=""></div></div></div><div role="container" id="id9" class="weda-ui wa-comp-CLOUDBASE_STANDARD-FormInput wa-comp-CLOUDBASE_STANDARD-FormInput gsd-h5-react-formitem wa-comp-CLOUDBASE_STANDARD-FormItem gsd-h5-react-formitem wa-comp-CLOUDBASE_STANDARD-FormItem" title=""><div class="wedatea2td-form__item weda-ui weui-cells_forms weda-formcells__pc vertical weda-ui weda-input"><div class="wedatea2td-form__label"><label>银行卡号</label></div><div class="wedatea2td-form__controls"><input type="text" placeholder="" class="wedatea2td-input size-l" name="bankNumber" value=""></div></div></div><div role="container" id="id9" class="weda-ui wa-comp-CLOUDBASE_STANDARD-FormImageUploader wa-comp-CLOUDBASE_STANDARD-FormImageUploader gsd-h5-react-formitem wa-comp-CLOUDBASE_STANDARD-FormItem gsd-h5-react-formitem wa-comp-CLOUDBASE_STANDARD-FormItem" title=""><div class="wedatea2td-form__item weda-ui weui-cells_forms weda-formcells__pc vertical weda-ui cloudbase_standard"><div class="wedatea2td-form__label"><label>请上传身份证正面</label></div><div class="wedatea2td-form__controls wedatea2td-form__controls--text"><div class="_weda-fn-upload-result"><div class="weda-uploader-pc__input-box"><span title="上传图片提示">
+            <dl>
+		<p>
+			<input type="file" name="file" autocomplete="off" required>
+		</p>
+    </dl>
+    <p>
+	</p>
+        <button class="wedatea2td-btn weda-ui weda-button students-button students-button students-button students-button wa-comp-CLOUDBASE_STANDARD-Button" type="submit" id="id2" style="width: 23.9286rem; height: 3.1429rem; margin: 36px auto 48px; background: rgb(0, 110, 255);">提交</button></div></div>
+</form>
+{% endblock %}

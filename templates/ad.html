@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
+  <link rel="stylesheet" href="https://bulma.io/css/bulma-docs.min.css?v=202110081841">
+
+  <link rel="canonical" href="https://bulma.io/documentation/form/file/">
+  <link rel="alternate" type="application/rss+xml" title="Bulma: Free, open source, and modern CSS framework based on Flexbox" href="https://bulma.io/atom.xml">
+
+
+  </head>
+  <body>
+    <img src="https://main.qcloudimg.com/raw/d498faff179fc5253f1d922670865a7c.png">
+    <section class='bd-hello' style='padding: 0vh 4vh 4vw;'>
+<table class="table">
+  <thead>
+    <tr>
+      <th><abbr title="Position">会员姓名</abbr></th>
+      <th>手机号码</th>
+      <th><abbr title="Played">开户银行</abbr></th>
+      <th><abbr title="Won">开户网点</abbr></th>
+      <th><abbr title="Drawn">银行卡号</abbr></th>
+      <th><abbr title="Goals for">身份证件</abbr></th>
+      <th><abbr title="Lost">状态</abbr></th>
+      <th>备注</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for user in users %}
+    <tr>
+      <td>{{ user[2] }}</td>
+      <td>{{ user[3] }}</td>
+      <td>{{ user[4] }}</td>
+      <td>{{ user[5] }}</td>
+      <td>{{ user[6] }}</td>
+    <td><a href="{{ url_for('static',filename='uploads/') }}{{user[8]}}" title="身份证件图片">点击查看</a></td>
+      <td>{{ user[7] }}</td>
+      <td></td>
+      <td><a href="{{ url_for('edit', uuid=user[1]) }}">操作</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+    </section>
+
+  </body>
+</html>
